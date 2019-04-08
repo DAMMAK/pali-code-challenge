@@ -8,10 +8,13 @@ class RecipeController {
   }
 
   sort(id: Array<number>) {
-    return id.reduce((acc: Promise<any>, cur): Promise<any> => {
+    var temp: number = 0;
+    var b;
+    id.forEach((cur, index) => {
       const a = axios
         .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${cur}`)
         .then(result => {
+          var acc: number = 0;
           var ingredientCount: any = [];
           var data = result.data.meals[0];
           var keys = Object.keys(data);
@@ -21,15 +24,20 @@ class RecipeController {
             if (typeof ingredientVal === "string" && ingredientVal.length > 0)
               ingredientCount.push(ingredientVal);
           });
-          if (ingredientCount.length < acc) {
-            acc = ingredientCount.length;
-          }
-          return acc;
+          console.log(`${cur} = ${ingredientCount.length}`);
+          return ingredientCount.length;
         });
-      const b = a.then(data => console.log(data));
-      return b;
-      // });
-    }, 0);
+      b = a.then(data => {
+        if (temp === 0) {
+          temp = data;
+        } else if (temp > data) {
+          temp = data;
+        }
+        return temp;
+      });
+      console.log(b);
+    });
+    return b;
   }
 }
 export default new RecipeController();

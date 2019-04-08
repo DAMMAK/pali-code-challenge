@@ -4,6 +4,7 @@ COPY package.json /app
 COPY tsconfig.json /app
 COPY src /app
 
-RUN npm run build
+RUN npm install
+RUN npm run start
 
-EXPOSE 8055
+EXPOSE 4000

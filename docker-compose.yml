@@ -1,0 +1,8 @@
+version: "3"
+services:
+  web_api:
+    image: "pali-web-api-image"
+    build: ./
+    command: npm start
+    ports:
+      - "4000:4000"
