@@ -1,7 +1,7 @@
 import express from "express";
-import App from "./app";
-import recipe from "./route";
-import app from "./app";
+import App from "./src/app";
+import recipe from "./src/route";
+import app from "./src/app";
 
 const PORT = process.env.PORT || 4000;
 app.use(recipe);
