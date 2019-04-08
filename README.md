@@ -5,12 +5,12 @@ A simple Web Service that accept Array of Recipe ID from https://themealdb.com a
 
 
 How to Use 
-Run below command
+Run following command
 ``docker-compose build``
 
 after docker image has been successfully built
 
-Run below command
+Run following command
 ``docker-compose up``
 
 navigate to address:PORT
