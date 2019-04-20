@@ -1,4 +1,4 @@
-# Pali Code Challenge
+# Pali Code Challenge  [![Build Status](https://travis-ci.org/DAMMAK/pali-code-challenge.svg?branch=master)](https://travis-ci.org/DAMMAK/pali-code-challenge)
 
 A simple Web Service that accept Array of Recipe ID from https://themealdb.com and return the Recipe ID with the least Ingredient
 
